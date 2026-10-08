@@ -14,3 +14,7 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+
+# Assignment description
+*.doc
+*.docx
