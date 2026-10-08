@@ -1,0 +1,9 @@
+# Python >= 3.10; install in a local virtual environment.
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+yfinance>=0.2.54
+nbformat>=5.9
+nbclient>=0.9
+ipykernel>=6.25

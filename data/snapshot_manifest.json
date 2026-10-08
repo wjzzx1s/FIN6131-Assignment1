@@ -1,0 +1,9 @@
+{
+  "filename": "close_adj.csv",
+  "sha256": "a2b47e925ea0ba77bef374af18f230fb6ddbbc8cc3368e5dcf4ea905bbc3bc79",
+  "provenance": "Byte-identical copy of the pre-existing Yahoo Finance adjusted-close snapshot; original download parameters are preserved in download_meta.json.",
+  "price_rows": 1254,
+  "tickers": 10,
+  "first_date": "2021-10-11",
+  "last_date": "2026-10-08"
+}

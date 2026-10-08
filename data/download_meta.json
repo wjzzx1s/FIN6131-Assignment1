@@ -1,0 +1,148 @@
+{
+  "generated_utc": "2026-10-08T17:10:14+00:00",
+  "source": "Yahoo Finance via yfinance",
+  "yfinance_version": "1.7.0",
+  "pandas_version": "3.0.6",
+  "requested_start": "2021-10-09",
+  "requested_end": "2026-10-09",
+  "interval": "1d",
+  "auto_adjust": false,
+  "price_field": "Adj Close (split- and distribution-adjusted)",
+  "trading_days": 1254,
+  "panel_start": "2021-10-11",
+  "panel_end": "2026-10-08",
+  "universe": [
+    {
+      "ticker": "SPY",
+      "name": "SPDR S&P 500 ETF Trust",
+      "asset_class": "US Equity",
+      "role": "US large-cap core"
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Invesco QQQ Trust",
+      "asset_class": "US Equity",
+      "role": "US large-cap growth and tech"
+    },
+    {
+      "ticker": "IWM",
+      "name": "iShares Russell 2000 ETF",
+      "asset_class": "US Equity",
+      "role": "US small-cap"
+    },
+    {
+      "ticker": "EFA",
+      "name": "iShares MSCI EAFE ETF",
+      "asset_class": "International Equity",
+      "role": "Developed ex-US equity"
+    },
+    {
+      "ticker": "EEM",
+      "name": "iShares MSCI Emerging Markets ETF",
+      "asset_class": "International Equity",
+      "role": "Emerging-market equity"
+    },
+    {
+      "ticker": "AGG",
+      "name": "iShares Core U.S. Aggregate Bond ETF",
+      "asset_class": "Fixed Income",
+      "role": "US investment-grade aggregate"
+    },
+    {
+      "ticker": "TLT",
+      "name": "iShares 20+ Year Treasury Bond ETF",
+      "asset_class": "Fixed Income",
+      "role": "Long-duration Treasuries"
+    },
+    {
+      "ticker": "HYG",
+      "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+      "asset_class": "Fixed Income",
+      "role": "US high-yield credit"
+    },
+    {
+      "ticker": "GLD",
+      "name": "SPDR Gold Shares",
+      "asset_class": "Commodity",
+      "role": "Gold"
+    },
+    {
+      "ticker": "VNQ",
+      "name": "Vanguard Real Estate ETF",
+      "asset_class": "Real Estate",
+      "role": "US REITs"
+    }
+  ],
+  "coverage": [
+    {
+      "ticker": "SPY",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "QQQ",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "IWM",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "EFA",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "EEM",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "AGG",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "TLT",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "HYG",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "GLD",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    },
+    {
+      "ticker": "VNQ",
+      "first_date": "2021-10-11",
+      "last_date": "2026-10-08",
+      "observations": 1254,
+      "missing": 0
+    }
+  ]
+}

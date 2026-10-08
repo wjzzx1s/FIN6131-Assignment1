@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "source": {
+    "generated_utc": "2026-10-08T17:10:14+00:00",
+    "source": "Yahoo Finance via yfinance",
+    "yfinance_version": "1.7.0",
+    "pandas_version": "3.0.6",
+    "requested_start": "2021-10-09",
+    "requested_end": "2026-10-09",
+    "interval": "1d",
+    "auto_adjust": false,
+    "price_field": "Adj Close (split- and distribution-adjusted)",
+    "trading_days": 1254,
+    "panel_start": "2021-10-11",
+    "panel_end": "2026-10-08",
+    "universe": [
+      {
+        "ticker": "SPY",
+        "name": "SPDR S&P 500 ETF Trust",
+        "asset_class": "US Equity",
+        "role": "US large-cap core"
+      },
+      {
+        "ticker": "QQQ",
+        "name": "Invesco QQQ Trust",
+        "asset_class": "US Equity",
+        "role": "US large-cap growth and tech"
+      },
+      {
+        "ticker": "IWM",
+        "name": "iShares Russell 2000 ETF",
+        "asset_class": "US Equity",
+        "role": "US small-cap"
+      },
+      {
+        "ticker": "EFA",
+        "name": "iShares MSCI EAFE ETF",
+        "asset_class": "International Equity",
+        "role": "Developed ex-US equity"
+      },
+      {
+        "ticker": "EEM",
+        "name": "iShares MSCI Emerging Markets ETF",
+        "asset_class": "International Equity",
+        "role": "Emerging-market equity"
+      },
+      {
+        "ticker": "AGG",
+        "name": "iShares Core U.S. Aggregate Bond ETF",
+        "asset_class": "Fixed Income",
+        "role": "US investment-grade aggregate"
+      },
+      {
+        "ticker": "TLT",
+        "name": "iShares 20+ Year Treasury Bond ETF",
+        "asset_class": "Fixed Income",
+        "role": "Long-duration Treasuries"
+      },
+      {
+        "ticker": "HYG",
+        "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+        "asset_class": "Fixed Income",
+        "role": "US high-yield credit"
+      },
+      {
+        "ticker": "GLD",
+        "name": "SPDR Gold Shares",
+        "asset_class": "Commodity",
+        "role": "Gold"
+      },
+      {
+        "ticker": "VNQ",
+        "name": "Vanguard Real Estate ETF",
+        "asset_class": "Real Estate",
+        "role": "US REITs"
+      }
+    ],
+    "coverage": [
+      {
+        "ticker": "SPY",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "QQQ",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "IWM",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "EFA",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "EEM",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "AGG",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "TLT",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "HYG",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "GLD",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      },
+      {
+        "ticker": "VNQ",
+        "first_date": "2021-10-11",
+        "last_date": "2026-10-08",
+        "observations": 1254,
+        "missing": 0
+      }
+    ]
+  },
+  "data": {
+    "price_rows": 1254,
+    "return_rows": 1253,
+    "tickers": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "EEM",
+      "AGG",
+      "TLT",
+      "HYG",
+      "GLD",
+      "VNQ"
+    ],
+    "first_date": "2021-10-11",
+    "last_date": "2026-10-08",
+    "csv_sha256": "a2b47e925ea0ba77bef374af18f230fb6ddbbc8cc3368e5dcf4ea905bbc3bc79"
+  },
+  "conventions": {
+    "annualization": 252,
+    "ddof": 1,
+    "rf_log_model": 0.03,
+    "rf_effective_annual": 0.03,
+    "rf_daily_simple": 0.00011730371383444904,
+    "mean_SE": "252 * daily sample std / sqrt(T)",
+    "model_return": "linear weighted daily logs, an approximation",
+    "performance_return": "exact weighted daily simple returns, daily rebalanced",
+    "performance_sharpe": "sqrt(252) * mean(simple return - daily rf) / sample std(simple return)"
+  },
+  "full_sample": {
+    "diagnostic": {
+      "A": 842.3590518402164,
+      "B": 27.861718496429514,
+      "C": 3.286564868121829,
+      "delta": 1992.192308548187,
+      "D": 2.5909469412230237,
+      "K": 2.3729849049922533,
+      "supremum": 1.5404495788542556,
+      "tangency_attained": true,
+      "status": "finite uncapped maximum"
+    },
+    "portfolios": {
+      "MVP unrestricted": {
+        "expected_return_log": 0.033075822519580925,
+        "volatility_log": 0.03445493036021421,
+        "sharpe_log_model": 0.08927089642684749,
+        "gross_exposure": 2.553671011156215
+      },
+      "MVP long-only": {
+        "expected_return_log": 0.005703469281726895,
+        "volatility_log": 0.05902222840602743,
+        "sharpe_log_model": -0.4116505149743196,
+        "gross_exposure": 1.0000000000000002
+      },
+      "Tangency long-only": {
+        "expected_return_log": 0.15077881902197315,
+        "volatility_log": 0.13922091013974328,
+        "sharpe_log_model": 0.8675336118744028,
+        "gross_exposure": 1.0000000000000049
+      },
+      "Equal weight 1/N": {
+        "expected_return_log": 0.0626411600476687,
+        "volatility_log": 0.1220411053927309,
+        "sharpe_log_model": 0.26746037691668517,
+        "gross_exposure": 1.0
+      },
+      "Tangency unrestricted": {
+        "expected_return_log": 0.9458755307710447,
+        "volatility_log": 0.5945508008462366,
+        "sharpe_log_model": 1.5404495788542543,
+        "gross_exposure": 16.92561305160336
+      }
+    },
+    "weights": {
+      "MVP unrestricted": {
+        "SPY": 0.24639333532408797,
+        "QQQ": -0.15372636776817494,
+        "IWM": -0.02666275680571578,
+        "EFA": -0.06796222918611915,
+        "EEM": 0.02835504259773945,
+        "AGG": 1.4371647807434933,
+        "TLT": -0.4482307375960135,
+        "HYG": 0.06492234691278667,
+        "GLD": -0.017296561024366445,
+        "VNQ": -0.06295685319771754
+      },
+      "MVP long-only": {
+        "SPY": 2.1065230636475142e-17,
+        "QQQ": 1.1094786116281883e-18,
+        "IWM": 0.0,
+        "EFA": 7.87463734445386e-18,
+        "EEM": 0.0,
+        "AGG": 0.7346937590444077,
+        "TLT": 3.5234015083281105e-17,
+        "HYG": 0.2649796528062438,
+        "GLD": 0.0003265881493485066,
+        "VNQ": 1.5654146394340796e-17
+      },
+      "Tangency long-only": {
+        "SPY": 0.4475043536021213,
+        "QQQ": 0.0,
+        "IWM": 0.0,
+        "EFA": 2.362533563369475e-16,
+        "EEM": 0.0,
+        "AGG": 6.928870709254463e-16,
+        "TLT": 0.0,
+        "HYG": 0.0,
+        "GLD": 0.5524956463978826,
+        "VNQ": 0.0
+      },
+      "Equal weight 1/N": {
+        "SPY": 0.1,
+        "QQQ": 0.1,
+        "IWM": 0.1,
+        "EFA": 0.1,
+        "EEM": 0.1,
+        "AGG": 0.1,
+        "TLT": 0.1,
+        "HYG": 0.1,
+        "GLD": 0.1,
+        "VNQ": 0.1
+      },
+      "Tangency unrestricted": {
+        "SPY": 6.83310660469938,
+        "QQQ": -1.563032592182835,
+        "IWM": -1.7174506282734319,
+        "EFA": -0.2244627774654311,
+        "EEM": -0.9037537789055085,
+        "AGG": -0.36676720323404316,
+        "TLT": -1.7809792332773642,
+        "HYG": -0.2262973928253607,
+        "GLD": 2.129699921102289,
+        "VNQ": -1.1800629196377157
+      }
+    },
+    "mvp_kkt_residual": 5.015906068966958e-08
+  },
+  "holdout": {
+    "split_base_date": "2024-10-11",
+    "first_oos_return_date": "2024-10-14",
+    "n_is": 755,
+    "n_oos": 498,
+    "training_diagnostic": {
+      "A": 641.246257809519,
+      "B": 16.762737873377844,
+      "C": 4.052304966286349,
+      "delta": 2317.536014122474,
+      "D": -2.474649860907725,
+      "K": 3.6236623259122442,
+      "supremum": 1.901081887041859,
+      "tangency_attained": false,
+      "status": "no finite maximum; infinite-leverage supremum"
+    },
+    "weights": {
+      "MVP unrestricted": {
+        "SPY": 0.30411568454137194,
+        "QQQ": -0.18459705209892305,
+        "IWM": -0.020279493069019928,
+        "EFA": -0.08046541875838498,
+        "EEM": 0.045215021019508674,
+        "AGG": 1.490579157199344,
+        "TLT": -0.4498577031280521,
+        "HYG": 0.012402038693614824,
+        "GLD": -0.0383922884293275,
+        "VNQ": -0.07871994597013186
+      },
+      "MVP long-only": {
+        "SPY": 0.0,
+        "QQQ": 0.0,
+        "IWM": 0.0,
+        "EFA": 0.0,
+        "EEM": 0.006429268427113788,
+        "AGG": 0.7554776539642603,
+        "TLT": 0.0,
+        "HYG": 0.2126625943815707,
+        "GLD": 0.02543048322705535,
+        "VNQ": 0.0
+      },
+      "Tangency long-only": {
+        "SPY": 0.2946036540741442,
+        "QQQ": 0.0,
+        "IWM": 0.0,
+        "EFA": 0.0,
+        "EEM": 0.0,
+        "AGG": 6.843190107126748e-14,
+        "TLT": 0.0,
+        "HYG": 6.285819316988057e-14,
+        "GLD": 0.7053963459278093,
+        "VNQ": 0.0
+      },
+      "Equal weight 1/N": {
+        "SPY": 0.1,
+        "QQQ": 0.1,
+        "IWM": 0.1,
+        "EFA": 0.1,
+        "EEM": 0.1,
+        "AGG": 0.1,
+        "TLT": 0.1,
+        "HYG": 0.1,
+        "GLD": 0.1,
+        "VNQ": 0.1
+      },
+      "Bounded Sharpe diagnostic +/-3": {
+        "SPY": 3.0,
+        "QQQ": -0.7770057897748974,
+        "IWM": -0.7339133934176444,
+        "EFA": -0.26893250272943864,
+        "EEM": -0.8026025316690392,
+        "AGG": -0.5852718097031816,
+        "TLT": -0.6892677863373163,
+        "HYG": 0.8205674732689061,
+        "GLD": 1.4512836987743583,
+        "VNQ": -0.414857358411747
+      }
+    },
+    "performance": [
+      {
+        "strategy": "MVP unrestricted",
+        "period": "IS",
+        "mean_annual_simple": 0.019173285698554903,
+        "volatility_simple": 0.039489763640992104,
+        "sharpe_simple": -0.26303652465885696,
+        "total_return": 0.056656522808757215,
+        "cagr": 0.018564446687499903,
+        "max_drawdown": -0.07344566150507015,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "MVP unrestricted",
+        "period": "OOS",
+        "mean_annual_simple": 0.03357051655473867,
+        "volatility_simple": 0.02609251990392821,
+        "sharpe_simple": 0.15368315069690933,
+        "total_return": 0.06787040589685045,
+        "cagr": 0.03378701769992287,
+        "max_drawdown": -0.017281144699399453,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "MVP long-only",
+        "period": "IS",
+        "mean_annual_simple": -0.00015676305392860155,
+        "volatility_simple": 0.06805775055425822,
+        "sharpe_simple": -0.43664826853949584,
+        "total_return": -0.007369910370241484,
+        "cagr": -0.0024659545112217796,
+        "max_drawdown": -0.1652429454501102,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "MVP long-only",
+        "period": "OOS",
+        "mean_annual_simple": 0.02837761588091391,
+        "volatility_simple": 0.043021842652042806,
+        "sharpe_simple": -0.02749580056192901,
+        "total_return": 0.05574901869044924,
+        "cagr": 0.02783233226718873,
+        "max_drawdown": -0.041492706122058354,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Tangency long-only",
+        "period": "IS",
+        "mean_annual_simple": 0.13935686488191656,
+        "volatility_simple": 0.1196876095324592,
+        "sharpe_simple": 0.9173575228424856,
+        "total_return": 0.4858634071653627,
+        "cagr": 0.14130632646149777,
+        "max_drawdown": -0.17986814522154349,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Tangency long-only",
+        "period": "OOS",
+        "mean_annual_simple": 0.22611749143976678,
+        "volatility_simple": 0.1867757205289063,
+        "sharpe_simple": 1.0523688785506011,
+        "total_return": 0.5100206048821196,
+        "cagr": 0.23188352424800462,
+        "max_drawdown": -0.17499147821262406,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Equal weight 1/N",
+        "period": "IS",
+        "mean_annual_simple": 0.048864019601230504,
+        "volatility_simple": 0.1260427307631189,
+        "sharpe_simple": 0.15315031337449955,
+        "total_return": 0.13047107149377823,
+        "cagr": 0.04178155821822882,
+        "max_drawdown": -0.24635643367525517,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Equal weight 1/N",
+        "period": "OOS",
+        "mean_annual_simple": 0.12193596751921304,
+        "volatility_simple": 0.11601580635105996,
+        "sharpe_simple": 0.7962314320637218,
+        "total_return": 0.25567954310553076,
+        "cagr": 0.12210904999260563,
+        "max_drawdown": -0.10543363091753477,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Bounded Sharpe diagnostic +/-3",
+        "period": "IS",
+        "mean_annual_simple": 0.5051037575258792,
+        "volatility_simple": 0.26464967583526605,
+        "sharpe_simple": 1.7968781565241931,
+        "total_return": 3.0847891713076843,
+        "cagr": 0.5995324217862377,
+        "max_drawdown": -0.2002214639378911,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      },
+      {
+        "strategy": "Bounded Sharpe diagnostic +/-3",
+        "period": "OOS",
+        "mean_annual_simple": 0.40833272164618634,
+        "volatility_simple": 0.35734051662017297,
+        "sharpe_simple": 1.059975480369366,
+        "total_return": 0.9737226587827168,
+        "cagr": 0.41065851783397167,
+        "max_drawdown": -0.4631808752886646,
+        "insolvent": false,
+        "first_insolvent_return_position": null
+      }
+    ]
+  },
+  "files": {
+    "assets": "assets.csv",
+    "cov_annual": "cov_annual.csv",
+    "correlation": "correlation.csv",
+    "log_returns_daily": "log_returns_daily.csv",
+    "full_portfolios": "full_portfolios.csv",
+    "full_weights": "full_weights.csv",
+    "frontier_unrestricted": "frontier_unrestricted.csv",
+    "frontier_long_only": "frontier_long_only.csv",
+    "cal": "cal.csv",
+    "is_weights": "is_weights.csv",
+    "performance": "performance.csv",
+    "oos_wealth": "oos_wealth.csv",
+    "sharpe_comparison": "sharpe_comparison.csv",
+    "coverage": "coverage.csv"
+  },
+  "limitations": [
+    "One holdout window; uncertain sample means",
+    "No fees, financing, borrow costs or margin",
+    "IID mean standard errors omit serial dependence",
+    "Yahoo adjusted history may be revised"
+  ]
+}

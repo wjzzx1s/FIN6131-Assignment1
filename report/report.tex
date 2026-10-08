@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,microtype,tikz,pgfplots}
+\usepackage[font=small,labelfont=bf,skip=2pt,hypcap=false]{caption}
+\usepackage[hidelinks]{hyperref}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\newcommand{\heading}[1]{\par\medskip\noindent{\large\bfseries #1}\par}
+\input{numbers.tex}
+\begin{document}
+\begin{center}
+{\Large\bfseries Mean--Variance Optimization of Ten ETFs}\\[4pt]
+{\small Assignment 1: empirical analysis and chronological robustness}\\[4pt]
+{\small Wei Qi \quad \href{mailto:226010267@link.cuhk.edu.cn}{226010267@link.cuhk.edu.cn}}
+\end{center}
+\heading{1. Data and estimation}
+The universe spans US equity (SPY, QQQ, IWM), international equity (EFA, EEM), aggregate bonds (AGG), long Treasuries (TLT), high-yield credit (HYG), gold (GLD), and US real estate (VNQ). The supplied Yahoo Finance adjusted-close snapshot covers \StartDate{}--\EndDate{}, with \PriceDays{} prices and \ReturnDays{} daily return observations per ETF. There are no missing prices in the analysis panel. Adjustments account for splits and distributions; USD prices describe US-listed instruments, not exclusively US economic exposures.
+
+For daily log returns $\ell_{it}=\log(P_{it}/P_{i,t-1})$, the estimates are
+\[
+\widehat\mu=m\bar\ell,\qquad \widehat\Sigma=m\frac{\sum_t(\ell_t-\bar\ell)(\ell_t-\bar\ell)^\top}{T-1},\qquad m=252.
+\]
+The annualized mean standard error under independent observations is $m s_i/\sqrt T$, not annualized volatility divided by $\sqrt T$. Dependence would require a HAC estimator or block bootstrap. The table reports log means and volatilities; $e^{\widehat\mu_i}-1$ is historical annualized geometric growth, not an expected arithmetic return.
+\begin{center}
+\begin{minipage}[t]{0.51\textwidth}\centering\vspace{0pt}\small
+\captionof{table}{Annualized ETF log-return estimates.}
+\begin{tabular}{lrrr}\toprule
+ETF & Log mean (\%) & Vol. (\%) & Mean SE (\%)\\\midrule
+\input{table_assets.tex}\\\bottomrule
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.46\textwidth}\centering\vspace{0pt}
+\input{figures/correlation.tex}
+\captionof{figure}{Daily log-return correlations.}
+\end{minipage}
+\end{center}
+\heading{2. Optimization and economic meaning}
+For a fully invested portfolio, solve
+\[
+\min_w\tfrac12w^\top\widehat\Sigma w\quad\text{subject to }\mathbf1^\top w=1,\quad \widehat\mu^\top w=r,
+\]
+with $w_i\ge0$ added for the no-short-sale case. The minimum-variance portfolio (MVP) omits the target-return constraint. Efficient points lie above the MVP in expected return. Tangency maximizes $(\widehat\mu^\top w-r_f)/\sqrt{w^\top\widehat\Sigma w}$ with the assignment's annual hurdle $r_f=3\%$.
+
+This is a \emph{log-moment proxy}: weighted asset log returns are not exact portfolio log returns. It abstracts from trading costs, borrow availability and financing. Short sales enlarge the feasible set, so the unrestricted frontier weakly dominates the constrained frontier at common feasible targets; this is an estimation result, not a guaranteed future return.
+\heading{3. Full-sample efficient frontiers}
+Let $Q=\widehat\Sigma^{-1}$, $A=\mathbf1^\top Q\mathbf1$, $B=\mathbf1^\top Q\widehat\mu$, $C=\widehat\mu^\top Q\widehat\mu$, and $D=AC-B^2$. Then
+\[
+ w_{\mathrm{MVP}}=Q\mathbf1/A,\qquad
+ \sigma^2(r)=(Ar^2-2Br+C)/D.
+\]
+The target-return weights are $Q(\lambda\mathbf1+\gamma\widehat\mu)$, with $\left[\begin{smallmatrix}A&B\\B&C\end{smallmatrix}\right](\lambda,\gamma)^\top=(1,r)^\top$. Implementation uses linear solves rather than an explicit inverse. Constrained weights are computed numerically and checked for budget, target and bound residuals.
+
+If $d=\mathbf1^\top Q(\widehat\mu-r_f\mathbf1)>0$, the unrestricted tangency is $w_T=Q(\widehat\mu-r_f\mathbf1)/d$. Its capital allocation line is $r=r_f+S_T\sigma$. Cash has zero volatility; positions beyond the risky tangency point imply borrowing and leverage. Here the full-sample normalizer is \FullDen{}.
+\newpage
+\begin{center}\input{figures/frontier.tex}\captionof{figure}{Both efficient frontiers, individual ETFs, MVPs, tangencies and CALs on one risk--return chart. }\end{center}
+\begin{center}\small
+\captionof{table}{Full-sample portfolio risk, return and leverage.}
+\begin{tabular}{lrrrr}\toprule
+Portfolio & Log mean (\%) & Vol. (\%) & Proxy SR & Gross exposure\\\midrule
+\input{table_portfolios.tex}\\\bottomrule
+\end{tabular}
+\end{center}
+\begin{center}\input{figures/weights.tex}\captionof{figure}{Full-sample portfolio allocations. Negative weights denote short positions.}\end{center}
+\FullInterpretation
+
+A high fitted Sharpe does not establish a persistent opportunity. Estimated mean differences are amplified by correlated assets and short positions. The MVP does not depend on mean estimates, but still relies on a stable covariance matrix. No-short-sale restrictions can reduce leverage and improve implementability while increasing the attainable variance at a given target return.
+\heading{4. Out-of-sample robustness}
+Estimate weights only on the first three years, ending \SplitDate{}, then hold those target weights fixed throughout the remaining two years. The split produces \InDays{} in-sample and \OutDays{} out-of-sample returns with no shared return dates. Daily rebalancing uses exact portfolio simple returns $R_{p,t}=w^\top[\exp(\ell_t)-\mathbf1]$ and wealth $V_t=\prod_{s\le t}(1+R_{p,s})$, beginning at $V_0=1$. Any daily return at or below $-1$ triggers insolvency handling rather than an invalid logarithm.
+
+The realized Sharpe uses daily simple excess returns over $r_{f,d}=(1.03)^{1/252}-1$:
+\[
+ S=\sqrt{252}\,\frac{\overline{R_p-r_{f,d}}}{s(R_p-r_{f,d})}.
+\]
+Reported geometric growth is $V_T^{252/T}-1$. It is not the same statistic as the log-moment model's linear predicted return.
+\ISDiagnostic
+\newpage
+\begin{center}\small
+\captionof{table}{In-sample and out-of-sample performance.}
+\begin{tabular}{lrrrrr}\toprule
+Strategy & IS SR & OOS SR & Growth (\%) & Vol. (\%) & Max DD (\%)\\\midrule
+\input{table_oos.tex}\\\bottomrule
+\end{tabular}
+\end{center}
+\begin{center}\input{figures/wealth.tex}\captionof{figure}{Out-of-sample wealth from fixed in-sample target weights, rebalanced daily from initial capital of one dollar.}\end{center}
+\begin{center}\input{figures/sharpe.tex}\captionof{figure}{In-sample versus held-out Sharpe, computed using the same simple-return convention in both periods.}\end{center}
+\OOSInterpretation
+\heading{5. Limitations and conclusion}
+\textbf{Estimation and stability.} Historical means are imprecise, and highly correlated ETFs make optimized long--short allocations particularly sensitive to small changes in estimated returns. The full-sample frontier is descriptive, not a forecast: its weights use observations unavailable at the training cutoff. Covariance is also time-varying, so even an MVP fitted without mean estimates need not retain its predicted risk. The selected universe is not a random sample of all investable assets; conclusions are conditional on these ETFs and this window.
+
+\textbf{Model and implementation.} Mean--variance analysis treats volatility as the risk criterion and does not separately penalize tail losses, illiquidity or margin calls. Weighted log means approximate, rather than equal, the growth of rebalanced wealth. Daily rebalancing ignores spreads, fees, taxes and turnover; leveraged portfolios additionally require financing and short-borrow assumptions. A per-position cap does not bound gross exposure, and a solvent frictionless wealth path does not establish that a strategy could meet real margin requirements. The severe drawdown of the bounded diagnostic illustrates why return and Sharpe should not be read in isolation.
+
+\textbf{Evidence and practical conclusion.} The held-out comparison shows that the long-only tangency beats equal weight in Sharpe in this interval, but also incurs a deeper drawdown and concentrates in two assets. The MVPs achieve low realized volatility without superior Sharpe. Thus the results support a risk--return trade-off, not universal dominance of optimization over diversification. One chronological split has substantial sampling uncertainty and provides neither a confidence interval nor evidence that the ranking will persist.
+
+A stronger assessment would use repeated rolling training/test windows, block-bootstrap uncertainty estimates, covariance shrinkage and mean regularization. Gross-leverage and turnover constraints, realistic borrowing costs and transaction-cost stress tests should then be imposed before considering implementation. Equal weight remains a transparent estimation-free benchmark; a constrained portfolio is justified only when its prospective risk budget and net-of-cost performance offer a defensible advantage.
+
+
+\end{document}

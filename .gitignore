@@ -1,0 +1,16 @@
+# Local environments and notebook caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.env.*
+
+# TeX build intermediates (keep report.pdf)
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz

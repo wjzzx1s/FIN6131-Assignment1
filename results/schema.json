@@ -1,0 +1,155 @@
+{
+  "assets.csv": [
+    "ticker",
+    "mean_annual_log",
+    "compounded_log_equivalent",
+    "vol_annual_log",
+    "se_mean_annual",
+    "sharpe_log_model",
+    "realized_total_return"
+  ],
+  "cal.csv": [
+    "strategy",
+    "volatility_log",
+    "expected_return_log"
+  ],
+  "correlation.csv": [
+    "ticker",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "cov_annual.csv": [
+    "ticker",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "coverage.csv": [
+    "ticker",
+    "first_date",
+    "last_date",
+    "observations",
+    "missing"
+  ],
+  "frontier_long_only.csv": [
+    "target",
+    "expected_return_log",
+    "volatility_log",
+    "sharpe_log_model",
+    "gross_exposure",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "frontier_unrestricted.csv": [
+    "target",
+    "expected_return_log",
+    "volatility_log",
+    "sharpe_log_model",
+    "gross_exposure",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "full_portfolios.csv": [
+    "strategy",
+    "expected_return_log",
+    "volatility_log",
+    "sharpe_log_model",
+    "gross_exposure"
+  ],
+  "full_weights.csv": [
+    "strategy",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "is_weights.csv": [
+    "strategy",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "log_returns_daily.csv": [
+    "date",
+    "SPY",
+    "QQQ",
+    "IWM",
+    "EFA",
+    "EEM",
+    "AGG",
+    "TLT",
+    "HYG",
+    "GLD",
+    "VNQ"
+  ],
+  "oos_wealth.csv": [
+    "date",
+    "MVP unrestricted",
+    "MVP long-only",
+    "Tangency long-only",
+    "Equal weight 1/N",
+    "Bounded Sharpe diagnostic +/-3"
+  ],
+  "performance.csv": [
+    "strategy",
+    "period",
+    "mean_annual_simple",
+    "volatility_simple",
+    "sharpe_simple",
+    "total_return",
+    "cagr",
+    "max_drawdown",
+    "insolvent",
+    "first_insolvent_return_position"
+  ],
+  "sharpe_comparison.csv": [
+    "strategy",
+    "IS",
+    "OOS",
+    "OOS_minus_1N"
+  ]
+}

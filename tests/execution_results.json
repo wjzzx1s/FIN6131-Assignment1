@@ -1,0 +1,35 @@
+{
+  "regression_tests": 6,
+  "status": "PASS",
+  "executed_code_cells": 12,
+  "error_cells": 0,
+  "runs": [
+    "bundle clean kernel",
+    "relocated bundle without repository",
+    "relocated Desktop relative subfolder"
+  ],
+  "frozen_download_disabled": true,
+  "relocated_csv_byte_identical": true,
+  "desktop_notebook_identical": true,
+  "snapshot_copy_identical": true,
+  "data": {
+    "price_rows": 1254,
+    "return_rows": 1253,
+    "tickers": [
+      "SPY",
+      "QQQ",
+      "IWM",
+      "EFA",
+      "EEM",
+      "AGG",
+      "TLT",
+      "HYG",
+      "GLD",
+      "VNQ"
+    ],
+    "first_date": "2021-10-11",
+    "last_date": "2026-10-08",
+    "csv_sha256": "a2b47e925ea0ba77bef374af18f230fb6ddbbc8cc3368e5dcf4ea905bbc3bc79"
+  },
+  "python": "3.14.7"
+}
